@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+            <div class="col align-self-center">
+                <p>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        1.-¿Es una mensageria real?
+                    </button>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse3">
+                        2.-¿Ustedes envian de forma segura los paquetes?
+                    </button>
+                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        3.-¿Como se que mi paquete llego en buenas condiciones?
+                    </button>
+                </p>
+                <div class="collapse" id="collapse1">
+                    <div class="card card-text">
+                        Nuestra empresa tiene el sello de calidad de el SERNAC
+                    </div>
+                </div>
+                <div class="collapse" id="collapse2">
+                    <div class="card card-text">
+                        Aunque nuestro equipo es increiblemente rapido, los paquetes y derivados siempre estan 100% protegidos
+                    </div>
+                </div>
+                <div class="collapse" id="collapse3">
+                    <div class="card card-text">
+                        CorreoYa le avisara por el medio que nos ha dado a la hora de enviar su correspondencia
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+{% block publivarios %}
+
+            <div class="col align-self-end">
+                <img src="https://cdn.pixabay.com/photo/2016/08/30/05/00/seo-1629811_960_720.jpg" height="600px" width="380px" alt="Ad2">
+            </div>
+
+{% endblock %}
