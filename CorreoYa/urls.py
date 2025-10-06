@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views_core.home, name='home'),
     path('quien/', views_core.quien, name='quien'),
     path('pregunta/', views_core.pregunta, name='pregunta'),
-    path('foro/', views_opi.foro, name='foro'),
+    path('foro/', views_opi.opinion, name='foro'),
     path('admin/', admin.site.urls),
 ]
 

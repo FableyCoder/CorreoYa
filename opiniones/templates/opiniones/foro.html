@@ -1,15 +1,32 @@
-{% extends 'core/base.html' %}
+{% extends 'opiniones/base.html' %}
 
 {% block content %}
 
             <div class="col align-self-center">
+                <div>
+                    <h1>Aqui estan algunas palabras de nuestros clientes satisfechos</h1>
+                </div>
+                {% for t in pag_obj %}
                 <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="{{ t.imagen.url }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title">{{ t.titulo }}</h5>
+                        <p class="card-text">{{ t.comentario }}</p>
                     </div>
+                </div>
+                {% endfor %}
+                <div class="pagination">
+                    <span class="step-links">
+                        {% if pag_obj.has_previous %}
+                            <a href="?page=1">&laquo;first</a>
+                            <a href="?page={{ pag_obj.previous_numero_pag }}">previous</a>
+                        {% endif %}
+                        <span class="current">Pagina {{ pag_obj.number }} of {{ pag_obj.paginador.num_pages }}.</span>
+                        {% if pag_obj.has_next %}
+                            <a href="?page={{ pag.obj.next_numero_pag }}">Siguente</a>
+                            <a href="?page={{ pag_obj.paginador.num_pages }}">Ultimo&raquo;</a>
+                        {% endif %}
+                    </span>
                 </div>
             </div>
 
@@ -17,8 +34,9 @@
 
 {% block publivarios %}
 
-            <div>
-                <img src="https://cdn.pixabay.com/photo/2022/03/15/13/19/sale-7070341_960_720.png" height="600px" width="380px" alt="Ad2">
+{% load static %}
+            <div class="col align-self-end">
+                <img src="{% static 'opiniones/imagenes/Publicidad1.png' %}" height="600px" width="380px" alt="Ad2">
             </div>
 
 {% endblock %}

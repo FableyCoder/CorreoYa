@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,14 +23,14 @@
             <a class="nav-link" href="/pregunta/">Preguntas Frecuentes</a>
         </li>
         <li>
-            <a class="nav-link" href="/galeria/">Galeria</a>
+            <a class="nav-link" href="/foro/">Foro</a>
         </li>
     </ul>
     </div>
     <div class="container text-bg-secondary">
         <div class="row justify-content-between">
             <div class="col align-self-start">
-                <img src="https://cdn.pixabay.com/photo/2016/09/22/11/22/marketeer-1687065_1280.jpg" height="600px" width="380px" alt="Ad1">
+                <img src="{% static 'core/imagenes/PublicidadB.jpg' %}" height="600px" width="380px" alt="Ad1">
             </div>
 {% block content %}{% endblock %}
 {% block publivarios %}{% endblock %}
