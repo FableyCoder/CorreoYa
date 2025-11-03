@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Core',
     'opiniones',
+    'paquetes',
+    'links',
 ]
 
 MIDDLEWARE = [

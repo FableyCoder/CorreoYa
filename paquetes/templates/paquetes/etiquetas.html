@@ -1,0 +1,31 @@
+{% extends 'paquetes/base.html' %}
+
+{% block content %}
+
+            <div class="col align-self-center">
+                <div>
+                    <h1>{{etiq}}</h1>
+                </div>
+                {% for l in paquete %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ l.imagen.url }}" class="card-img-top" alt="foto">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ l.title }}</h5>
+                        <p class="card-text">{{ l.descrip }}</p>
+                        <p class="card-text">{{ l.apertura|date:"SHORT_DATE_FORMAT" }}</p>
+                        <p class="card-text">Es aprobado por: {{ l.aprobador }}</p>
+                        <p class="card-text">Etiquetas: {{ l.etiquetas.all|join:", " }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+{% endblock %}
+
+{% block publivarios %}
+{% load static %}
+            <div class="col align-self-end">
+                <img src="{% static 'opiniones/imagenes/Publicidad3.jpg' %}" height="600px" width="380px" alt="Ad2">
+            </div>
+
+{% endblock %}
